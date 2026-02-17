@@ -5,350 +5,350 @@ const products = [
     name: "The Ordinary Skin Care Set",
     category: "Beauty",
     price: 60000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Beauty\\B1.jpg"
+    image: "images/Beauty/B1.jpg"
   },
   {
     id: "B2",
     name: "Lumene Lip Gloss",
     category: "Beauty",
     price: 7000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Beauty\\B2.jpg"
+    image: "images/Beauty/B2.jpg"
   },
   {
     id: "B3",
     name: "Oh My Bod! Sunscreen",
     category: "Beauty",
     price: 15000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Beauty\\B3.jpg"
+    image: "images/Beauty/B3.jpg"
   },
   {
     id: "B4",
     name: "Tacogran Shampo",
     category: "Beauty",
     price: 17000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Beauty\\B4.jpg"
+    image: "images/Beauty/B4.jpg"
   },
   {
     id: "B5",
     name: "Aveeno Body Lotion",
     category: "Beauty",
     price: 13000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Beauty\\B5.jpg"
+    image: "images/Beauty/B5.jpg"
   },
   {
     id: "B6",
     name: "Prada Perfume",
     category: "Beauty",
     price: 70000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Beauty\\B6.jpg"
+    image: "images/Beauty/B6.jpg"
   },
   {
     id: "B7",
     name: "Elemis Facial Wash",
     category: "Beauty",
     price: 25000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Beauty\\B7.jpg"
+    image: "images/Beauty/B7.jpg"
   },
   {
     id: "B8",
     name: "Ela De Pure Gel Facial Cleanser",
     category: "Beauty",
     price: 27000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Beauty\\B8.jpg"
+    image: "images/Beauty/B8.jpg"
   },
   {
     id: "B9",
     name: "Centella Brightening Toner",
     category: "Beauty",
     price: 17000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Beauty\\B9.jpg"
+    image: "images/Beauty/B9.jpg"
   },
   {
     id: "B10",
     name: "Lash Paradise Mascara",
     category: "Beauty",
     price: 5000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Beauty\\B10.jpg"
+    image: "images/Beauty/B10.jpg"
   },
   {
     id: "E1",
     name: "ETA Electric Kettle",
     category: "Electronics",
     price: 35000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Electronics\\E1.jpg"
+    image: "images/Electronics/E1.jpg"
   },
   {
     id: "E2",
     name: "Iphone 16",
     category: "Electronics",
     price: 980000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Electronics\\E2.jpg"
+    image: "images/Electronics/E2.jpg"
   },
   {
     id: "E3",
     name: "Dual Speaker Set",
     category: "Electronics",
     price: 150000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Electronics\\E3.jpg"
+    image: "images/Electronics/E3.jpg"
   },
   {
     id: "E4",
     name: "Playsation 5",
     category: "Electronics",
     price: 490000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Electronics\\E4.jpg"
+    image: "images/Electronics/E4.jpg"
   },
   {
     id: "E5",
     name: "Custom Xbox Controller",
     category: "Electronics",
     price: 70000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Electronics\\E5.jpg"
+    image: "images/Electronics/E5.jpg"
   },
   {
     id: "E6",
     name: "Sony HeadSets",
     category: "Electronics",
     price: 80000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Electronics\\E6.jpg"
+    image: "images/Electronics/E6.jpg"
   },
   {
     id: "E7",
     name: "Aukey Earbuds",
     category: "Electronics",
     price: 25000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Electronics\\E7.jpg"
+    image: "images/Electronics/E7.jpg"
   },
   {
     id: "E8",
     name: "Mechanical Keyboard",
     category: "Electronics",
     price: 40000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Electronics\\E8.jpg"
+    image: "images/Electronics/E8.jpg"
   },
   {
     id: "E9",
     name: "Razer Gaming Mouse",
     category: "Electronics",
     price: 120000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Electronics\\E9.jpg"
+    image: "images/Electronics/E9.jpg"
   },
   {
     id: "E10",
     name: "Logitech Webcam",
     category: "Electronics",
     price: 25000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Electronics\\E10.jpg"
+    image: "images/Electronics/E10.jpg"
   },
   {
     id: "F1",
     name: "Plain White T-shirt",
     category: "Fashion",
     price: 7000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Fashion\\F1.jpg"
+    image: "images/Fashion/F1.jpg"
   },
   {
     id: "F2",
     name: "Blue Jeans",
     category: "Fashion",
     price: 18000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Fashion\\F2.jpg"
+    image: "images/Fashion/F2.jpg"
   },
   {
     id: "F3",
     name: "Nike Air Jordan 1",
     category: "Fashion",
     price: 100000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Fashion\\F3.jpg"
+    image: "images/Fashion/F3.jpg"
   },
   {
     id: "F4",
     name: "DIVRSN Track-suit",
     category: "Fashion",
     price: 80000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Fashion\\F4.jpg"
+    image: "images/Fashion/F4.jpg"
   },
   {
     id: "F5",
     name: "Rolex Watch",
     category: "Fashion",
     price: 4500000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Fashion\\F5.jpg"
+    image: "images/Fashion/F5.jpg"
   },
   {
     id: "F6",
     name: "Coach Bag",
     category: "Fashion",
     price: 600000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Fashion\\F6.jpg"
+    image: "images/Fashion/F6.jpg"
   },
   {
     id: "F7",
     name: "Vintage Belt",
     category: "Fashion",
     price: 15000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Fashion\\F7.jpg"
+    image: "images/Fashion/F7.jpg"
   },
   {
     id: "F8",
     name: "Baseball Cap",
     category: "Fashion",
     price: 9000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Fashion\\F8.jpg"
+    image: "images/Fashion/F8.jpg"
   },
   {
     id: "F9",
     name: "Addidas Football Boot",
     category: "Fashion",
     price: 90000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Fashion\\F9.jpg"
+    image: "images/Fashion/F9.jpg"
   },
   {
     id: "F10",
     name: "Black Long-Sleeve Shirt",
     category: "Fashion",
     price: 12000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Fashion\\F10.jpg"
+    image: "images/Fashion/F10.jpg"
   },
   {
     id: "G1",
     name: "Bag of Rice",
     category: "Groceries",
     price: 65000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Groceries\\G1.jpg"
+    image: "images/Groceries/G1.jpg"
   },
   {
     id: "G2",
     name: "Pack of Ramen",
     category: "Groceries",
     price: 8000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Groceries\\G2.jpg"
+    image: "images/Groceries/G2.jpg"
   },
   {
     id: "G3",
     name: "Olive Oil",
     category: "Groceries",
     price: 12000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Groceries\\G3.jpg"
+    image: "images/Groceries/G3.jpg"
   },
   {
     id: "G4",
     name: "Itambe MIlk",
     category: "Groceries",
     price: 6000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Groceries\\G4.jpg"
+    image: "images/Groceries/G4.jpg"
   },
   {
     id: "G5",
     name: "Apples",
     category: "Groceries",
     price: 300,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Groceries\\G5.jpg"
+    image: "images/Groceries/G5.jpg"
   },
   {
     id: "G6",
     name: "Bacardi 151",
     category: "Groceries",
     price: 63000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Groceries\\G6.jpg"
+    image: "images/Groceries/G6.jpg"
   },
   {
     id: "G7",
     name: "Brown Sugar",
     category: "Groceries",
     price: 4000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Groceries\\G7.jpg"
+    image: "images/Groceries/G7.jpg"
   },
   {
     id: "G8",
     name: "Bunch of Bananas",
     category: "Groceries",
     price: 700,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Groceries\\G8.jpg"
+    image: "images/Groceries/G8.jpg"
   },
   {
     id: "G9",
     name: "Digestive Biscuit",
     category: "Groceries",
     price: 3000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Groceries\\G9.jpg"
+    image: "images/Groceries/G9.jpg"
   },
   {
     id: "G10",
     name: "Crate of Eggs",
     category: "Groceries",
     price: 8000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Groceries\\G10.jpg"
+    image: "images/Groceries/G10.jpg"
   },
   {
     id: "H1",
     name: "Full Bed Set",
     category: "Home",
     price: 200000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Home\\H1.jpg"
+    image: "images/Home/H1.jpg"
   },
   {
     id: "H2",
     name: "Wooden Stool",
     category: "Home",
     price: 17000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Home\\H2.jpg"
+    image: "images/Home/H2.jpg"
   },
   {
     id: "H3",
     name: "Simple Vase",
     category: "Home",
     price: 9000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Home\\H3.jpg"
+    image: "images/Home/H3.jpg"
   },
   {
     id: "H4",
     name: "Couch",
     category: "Home",
     price: 50000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Home\\H4.jpg"
+    image: "images/Home/H4.jpg"
   },
   {
     id: "H5",
     name: "Coffee Table",
     category: "Home",
     price: 23000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Home\\H5.jpg"
+    image: "images/Home/H5.jpg"
   },
   {
     id: "H6",
     name: "Cupboard",
     category: "Home",
     price: 35000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Home\\H6.jpg"
+    image: "images/Home/H6.jpg"
   },
   {
     id: "H7",
     name: "Smart TV",
     category: "Home",
     price: 2300000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Home\\H7.jpg"
+    image: "images/Home/H7.jpg"
   },
   {
     id: "H8",
     name: "Standing Fan",
     category: "Home",
     price: 40000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Home\\H8.jpg"
+    image: "images/Home/H8.jpg"
   },
   {
     id: "H9",
     name: "Office Chair",
     category: "Home",
     price: 55000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Home\\H9.jpg"
+    image: "images/Home/H9.jpg"
   },
   {
     id: "H10",
     name: "Kitchen Utensil Set",
     category: "Home",
     price: 12000,
-    image: "C:\\Users\\HP OMEN\\Desktop\\COS107 FINAL PROJECT\\images\\Home\\H10.jpg"
+    image: "images/Home/H10.jpg"
   }
 ];
 
