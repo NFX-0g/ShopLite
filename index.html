@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ShopLite</title>
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Optional Bootstrap Icons (nice to have) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-light">
+
+  <!-- NAVBAR (global) -->
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#" data-section="home">ShopLite</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="topNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#" data-section="home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-section="shop">Shop</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-section="categories">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-section="search">Search</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-section="cart">Cart</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-section="checkout">Make Payment</a></li>
+        </ul>
+
+        <form class="d-flex gap-2" role="search" onsubmit="event.preventDefault(); showSection('search');">
+          <input class="form-control" id="navSearch" type="search" placeholder="Search products..." aria-label="Search">
+          <button class="btn btn-outline-primary" type="submit">Search</button>
+        </form>
+
+        <button class="btn btn-primary ms-lg-3" type="button" data-section="cart" title="Cart">
+          <i class="bi bi-cart3 me-1"></i>
+          Cart <span class="badge text-bg-light ms-1" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="container my-4">
+
+    <!-- HOME -->
+    <section id="home" class="app-section">
+      <div class="p-4 p-md-5 mb-4 rounded-3 bg-dark text-white hero">
+        <div class="row align-items-center g-4">
+          <div class="col-md-7">
+            <h1 class="display-6 fw-bold">Big Deals, Every Day</h1>
+            <p class="lead mb-4">Browse categories, search products, add to cart, and checkout — all in one page.</p>
+            <div class="d-flex gap-2">
+              <button class="btn btn-warning btn-lg" type="button" onclick="showSection('categories')">Shop by category</button>
+              <button class="btn btn-outline-light btn-lg" type="button" onclick="showSection('shop')">Go to Shop</button>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="ratio ratio-16x9 rounded bg-secondary-subtle border wire-img">
+              <img
+                src="C:\Users\HP OMEN\Desktop\COS107 FINAL PROJECT\images\Fashion\F3.jpg"
+                alt="ShopLite banner"
+                class="img-fluid"
+                style="object-fit: cover;"
+              >
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Category shortcuts -->
+      <div class="d-flex flex-wrap gap-2 mb-4">
+        <button class="btn btn-outline-dark" type="button" data-home-category="Electronics">Electronics</button>
+        <button class="btn btn-outline-dark" type="button" data-home-category="Fashion">Fashion</button>
+        <button class="btn btn-outline-dark" type="button" data-home-category="Beauty">Beauty</button>
+        <button class="btn btn-outline-dark" type="button" data-home-category="Home">Home</button>
+        <button class="btn btn-outline-dark" type="button" data-home-category="Groceries">Groceries</button>
+      </div>
+
+
+      <!-- Featured products -->
+      <div class="d-flex align-items-center justify-content-between mb-2">
+        <h2 class="h4 mb-0">Featured products</h2>
+        <button class="btn btn-sm btn-outline-primary" type="button" onclick="showSection('search')">View all</button>
+      </div>
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3" id="homeFeatured"></div>
+
+    </section>
+
+    <!-- SHOP -->
+<section id="shop" class="app-section d-none">
+  <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+    <div>
+      <h2 class="h4 mb-1">Shop</h2>
+      <div class="text-muted small">Browse all products, then use search/filter/sort.</div>
+    </div>
+    <button class="btn btn-sm btn-outline-secondary" type="button" onclick="showSection('home')">
+      Back to Home
+    </button>
+  </div>
+
+  <!-- Controls row -->
+  <div class="row g-2 align-items-end mb-3">
+    <div class="col-lg-6">
+      <label class="form-label small mb-1">Search (Shop)</label>
+      <input id="shopSearch" class="form-control" type="text" placeholder="Search in shop...">
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+      <label class="form-label small mb-1">Category</label>
+      <select id="shopCategory" class="form-select">
+        <option selected>All categories</option>
+        <option>Electronics</option>
+        <option>Fashion</option>
+        <option>Beauty</option>
+        <option>Home</option>
+        <option>Groceries</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Product grid -->
+  <div id="shopGrid" class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3">
+    <!-- Product card template (duplicate for now; later JS will render these from your 50 products) -->
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="ratio ratio-4x3 bg-body-tertiary">
+          <div class="d-flex align-items-center justify-content-center text-secondary">Image</div>
+        </div>
+        <div class="card-body">
+          <h3 class="h6 card-title mb-1">Shop Product</h3>
+          <p class="mb-2 text-muted small">Electronics</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="fw-semibold">₦99,000</span>
+            <div class="d-flex gap-2">
+              <button class="btn btn-sm btn-outline-secondary" type="button"
+                      data-bs-toggle="modal" data-bs-target="#productModal">
+                View
+              </button>
+              <button class="btn btn-sm btn-primary" type="button">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Duplicate more cards... -->
+  </div>
+</section>
+
+
+  <!-- CATEGORIES -->
+  <section id="categories" class="app-section d-none">
+    <div class="d-flex align-items-center justify-content-between mb-3">
+      <h2 class="h4 mb-0">Categories</h2>
+      <button class="btn btn-sm btn-outline-secondary" type="button" onclick="showSection('home')">
+        Back to Home
+      </button>
+    </div>
+
+    <div id="categoryBlocks">
+      <!-- JS will render one block for each category here -->
+    </div>
+  </section>
+
+
+    <!-- SEARCH RESULTS -->
+    <section id="search" class="app-section d-none">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+        <div>
+          <h2 class="h4 mb-1">Search results</h2>
+          <div class="text-muted small">Results for "<span id="searchQueryPreview">your search</span>" (12)</div>
+        </div>
+
+        <div class="d-flex flex-wrap gap-2">
+          <select class="form-select form-select-sm" style="min-width: 180px;">
+            <option selected>All categories</option>
+            <option>Electronics</option>
+            <option>Fashion</option>
+            <option>Beauty</option>
+            <option>Home</option>
+            <option>Groceries</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="searchGrid" class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3 mb-4">
+        <!-- Results cards (reuse same card style) -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="ratio ratio-4x3 bg-body-tertiary">
+              <div class="d-flex align-items-center justify-content-center text-secondary">Image</div>
+            </div>
+            <div class="card-body">
+              <h3 class="h6 card-title mb-1">Result Product</h3>
+              <p class="mb-2 text-muted small">Electronics</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-semibold">₦99,000</span>
+                <div class="d-flex gap-2">
+                  <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="modal" data-bs-target="#productModal">View</button>
+                  <button class="btn btn-sm btn-primary" type="button">Add</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Duplicate as needed -->
+      </div>
+    </section>
+
+    <!-- CART -->
+    <section id="cart" class="app-section d-none">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <h2 class="h4 mb-0">Your Cart</h2>
+        <button class="btn btn-sm btn-outline-secondary" type="button" onclick="showSection('search')">
+          Continue shopping
+        </button>
+      </div>
+
+      <div class="row g-3">
+        <!-- Left: items -->
+        <div class="col-lg-8">
+          <div id="cartItems"></div>
+        </div>
+
+        <!-- Right: summary -->
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="h6">Order summary</h3>
+
+              <div class="d-flex justify-content-between small mb-1">
+                <span>Subtotal</span><span id="cartSubtotal">₦99,000</span>
+              </div>
+              <div class="d-flex justify-content-between small mb-1">
+                <span>Delivery</span><span id="cartDelivery">₦2,500</span>
+              </div>
+
+              <hr class="my-2">
+              <div class="d-flex justify-content-between fw-semibold mb-3">
+                <span>Total</span><span id="cartTotal">₦101,500</span>
+              </div>
+
+              <button class="btn btn-success w-100" type="button" onclick="showSection('checkout')">
+                Proceed to payment
+              </button>
+              <button class="btn btn-outline-secondary w-100 mt-2" type="button" id="clearCartBtn">
+                Clear cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CHECKOUT -->
+    <section id="checkout" class="app-section d-none">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <h2 class="h4 mb-0">Checkout (Make Payment)</h2>
+        <button class="btn btn-sm btn-outline-secondary" type="button" onclick="showSection('cart')">Back to cart</button>
+      </div>
+
+      <div class="row g-3">
+        <!-- Left: form -->
+        <div class="col-lg-7">
+          <div class="card">
+            <div class="card-body">
+              <form id="checkoutForm">
+                <div class="row g-2">
+                  <div class="col-md-6">
+                    <label class="form-label">Full name <span class="text-danger">*</span></label>
+                    <input id="coName" class="form-control" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Phone <span class="text-danger">*</span></label>
+                    <input id="coPhone" class="form-control" required>
+                  </div>
+                </div>
+
+                <div class="mt-2">
+                  <label class="form-label">Email (optional)</label>
+                  <input id="coEmail" type="email" class="form-control" placeholder="name@example.com">
+                </div>
+
+                <div class="mt-2">
+                  <label class="form-label">Address <span class="text-danger">*</span></label>
+                  <textarea id="coAddress" class="form-control" rows="3" required></textarea>
+                </div>
+
+                <div class="row g-2 mt-1">
+                  <div class="col-md-6">
+                    <label class="form-label">City <span class="text-danger">*</span></label>
+                    <input id="coCity" class="form-control" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">State <span class="text-danger">*</span></label>
+                    <select id="coState" class="form-select" required>
+                      <option value="" selected disabled>Select state</option>
+                      <option>Lagos</option>
+                      <option>Abuja</option>
+                      <option>Rivers</option>
+                      <option>Kano</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row g-2 mt-1">
+                  <div class="col-md-6">
+                    <label class="form-label">Delivery option</label>
+                    <select class="form-select">
+                      <option selected>Standard (2–5 days)</option>
+                      <option>Express (24–48 hrs)</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Payment method</label>
+                    <select class="form-select">
+                      <option selected>Pay on Delivery</option>
+                      <option>Bank Transfer</option>
+                    </select>
+                  </div>
+                </div>
+
+                <p class="text-muted small mt-2 mb-3">Required fields are marked with *.</p>
+
+                <button class="btn btn-success btn-lg w-100" type="submit">Place order</button>
+                <p class="text-muted small mt-2 mb-0">By placing order you agree to our terms.</p>
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: summary -->
+        <div class="col-lg-5">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-body">
+                <h3 class="h6">Order summary</h3>
+                <div class="small mb-2 text-muted" id="checkoutItemsCount">Items (0)</div>
+
+                <div id="checkoutItemsList" class="mb-2 small">
+                  <!-- JS will render item lines here -->
+                </div>
+
+                <hr class="my-2">
+
+                <div class="d-flex justify-content-between small mb-1">
+                  <span>Subtotal</span><span id="checkoutSubtotal">₦0</span>
+                </div>
+                <div class="d-flex justify-content-between small mb-1">
+                  <span>Delivery</span><span id="checkoutDelivery">₦0</span>
+                </div>
+                <div class="d-flex justify-content-between small mb-2">
+                  <span>Discount</span><span id="checkoutDiscount">-₦0</span>
+                </div>
+                <div class="d-flex justify-content-between fw-semibold">
+                  <span>Total</span><span id="checkoutTotal">₦0</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THANK YOU -->
+    <section id="thankyou" class="app-section d-none">
+      <div class="card shadow-sm">
+        <div class="card-body text-center p-4 p-md-5">
+          <div class="display-6 mb-2">Thank you!</div>
+          <p class="lead mb-1">Your order has been confirmed.</p>
+
+          <div class="row justify-content-center text-start g-3 mb-4">
+            <div class="col-md-5">
+              <div class="p-3 bg-body-tertiary rounded">
+                <div class="fw-semibold mb-2">Delivery summary</div>
+                <div class="small">Name: <span id="tyName">John Doe</span></div>
+                <div class="small">Phone: <span id="tyPhone">08012345678</span></div>
+                <div class="small">Address: <span id="tyAddress">12 Example Street, Lagos</span></div>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="p-3 bg-body-tertiary rounded">
+                <div class="fw-semibold mb-2">Order summary</div>
+                <div class="small">Items: <span id="tyItems">2</span></div>
+                <div class="small">Total: <span id="tyTotal">₦121,500</span></div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="d-flex flex-wrap justify-content-center gap-2">
+            <button class="btn btn-primary btn-lg" type="button" onclick="showSection('home')">Continue shopping</button>
+            <button class="btn btn-outline-secondary btn-lg" type="button" onclick="showSection('categories')">View categories</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER (global) -->
+  <footer class="border-top bg-white mt-5">
+    <div class="container py-4">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="fw-semibold mb-1">About</div>
+          <div class="text-muted small">The future of E-commerce in Africa.</div>
+        </div>
+        <div class="col-md-4">
+          <div class="fw-semibold mb-1">Contact</div>
+          <div class="text-muted small">support@gmail.com</div>
+          <div class="text-muted small">Lagos, Nigeria</div>
+        </div>
+        <div class="col-md-4">
+          <div class="fw-semibold mb-1">Delivery & Returns</div>
+          <div class="text-muted small">Standard delivery 2–5 days.</div>
+          <div class="text-muted small">Returns within 7 days.</div>
+        </div>
+      </div>
+      <div class="text-muted small mt-3">© 2026 ShopLite</div>
+    </div>
+  </footer>
+
+  <!-- PRODUCT DETAILS MODAL -->
+  <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+       <div class="modal-header">
+          <h1 class="modal-title fs-5" id="productModalLabel"></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img id="productModalImage" class="img-fluid mb-3" alt="">
+          <p class="mb-1">
+            <strong>Category:</strong>
+            <span id="productModalCategory"></span>
+          </p>
+          <p class="mb-0">
+            <strong>Price:</strong>
+            <span id="productModalPrice"></span>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS bundle (needed for modal + navbar toggler) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Your JS -->
+  <script src="app.js"></script>
+</body>
+</html>

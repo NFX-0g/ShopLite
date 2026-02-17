@@ -1,0 +1,14 @@
+/* Keep sections consistent */
+.app-section {
+  min-height: 60vh;
+}
+
+/* Slightly nicer hero image placeholder */
+.hero .wire-img {
+  overflow: hidden;
+}
+
+.cart-thumb {
+  width: 84px;
+  flex: 0 0 84px;
+}
